@@ -1,0 +1,70 @@
+# Project metadata
+annotation_task_name: CME Tag Verification
+port: 8000
+
+# Data configuration
+data_files:
+- data/cme_samples.jsonl
+
+# Item properties
+item_properties:
+  id_key: id
+  text_key: text
+
+# Output configuration
+output_annotation_dir: annotation_output/cme_tagging/
+output_annotation_format: json
+
+# HTML layout template
+html_layout: templates/cme_layout.html
+
+# Annotation schemes
+annotation_schemes:
+- annotation_type: radio
+  description: Is the AI-generated specialty tag correct?
+  labels:
+  - key_value: '1'
+    name: 'Correct'
+  - key_value: '2'
+    name: 'Incorrect'
+  - key_value: '3'
+    name: 'Needs Edit'
+  name: verification
+  sequential_key_binding: true
+  required: true
+
+- annotation_type: text
+  description: If incorrect, what should the specialty be?
+  name: corrected_specialty
+  optional: true
+
+- annotation_type: radio
+  description: Is the state tag correct?
+  labels:
+  - key_value: '4'
+    name: 'Correct'
+  - key_value: '5'
+    name: 'Incorrect'
+  name: state_verification
+  sequential_key_binding: true
+  required: true
+
+- annotation_type: text
+  description: If incorrect, what should the state be?
+  name: corrected_state
+  optional: true
+
+# User configuration
+user_config:
+  allow_all_users: true
+
+# UI configuration
+edits_allowed: true
+jumping_to_id_disabled: false
+hide_navbar: false
+hide_annotation_guideline: false
+hide_prev_next: false
+alert_time_each_instance: 0
+
+# Instance sampling
+instance_id_from_input_file: true
