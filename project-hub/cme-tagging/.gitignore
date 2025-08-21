@@ -1,0 +1,14 @@
+# User-specific files
+user_config.json
+*.log
+
+# Annotation outputs (keep sample_output for reference)
+annotation_output/
+
+# Temporary files
+*.pyc
+__pycache__/
+.DS_Store
+
+# Keep sample output for reference
+!sample_output/

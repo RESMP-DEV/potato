@@ -32,6 +32,14 @@ pip install -r requirements.txt
 ```
 
 2. **Run the annotation server**:
+
+Option A: Using the provided script
+```bash
+cd project-hub/cme-tagging/scripts
+./run_annotation.sh
+```
+
+Option B: Direct command from potato root
 ```bash
 # From the potato root directory
 python potato/flask_server.py start project-hub/cme-tagging/configs/cme_config.yaml -p 8000
